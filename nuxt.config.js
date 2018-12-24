@@ -2,7 +2,9 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  router: {
+    middleware: 'languageDetection'
+  },
   /*
   ** Headers of the page
   */
@@ -34,12 +36,14 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/components'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
+    ['storyblok-nuxt', {accessToken: 'RTBKmSkztJ9p6Gyqan1r7Att', cacheProvider: 'memory'}]
   ],
 
   /*
